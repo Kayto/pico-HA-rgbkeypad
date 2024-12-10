@@ -61,6 +61,7 @@ All other files are libraries, using umqtt and pico-rgbkeypad.
     - Copyright © 2021 Martin O'Hanlon
 
 ### Set up File Structure:
+```
 Raspberry Pi Pico
     ├── main.py
     ├── config.py	
@@ -68,7 +69,7 @@ Raspberry Pi Pico
         ├── rgbkeypad.py
         └── umqtt/
             └── simple.py
-			
+```			
 ### Config set up
 
 Credentials for wifi and mqtt should be placed between the quotes within the config.py.
@@ -279,7 +280,7 @@ See example automation code below based on the example mapping above.
       retain: true
   mode: single
 ```
-** Example HA to RGB Keypad automation - Climate Entity ON/OFF**
+**Example HA to RGB Keypad automation - Climate Entity ON/OFF**
 ```yaml
 - alias: KEY 0,0,1
   description: Heating
@@ -325,7 +326,7 @@ See example automation code below based on the example mapping above.
       retain: true
   mode: single
 ```
-** Example HA to RGB Keypad automation - Motion Entity**
+**Example HA to RGB Keypad automation - Motion Entity**
 ```yaml
 - alias: KEY 0,3,1
   description: Z1Motion
