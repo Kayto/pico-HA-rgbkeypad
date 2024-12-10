@@ -2,6 +2,7 @@
 
 Wifi connected RGB Keypad
 using **main.py**
+
 Author: AdamT117 (kayto@github.com)
 
 Version Control:
@@ -34,7 +35,6 @@ OK if thats not enough, then just enjoy the Dr. Evil style level of insight on m
    - 4x4 RGB LED keypad designed for the Raspberry Pi Pico.
    - Features individually addressable RGB LEDs.
    - Compatible with MicroPython and CircuitPython.
-   - Note this uses Micropython
    - Source: https://shop.pimoroni.com/products/pico-rgb-keypad-base
 
 ### Software and Dependencies:
