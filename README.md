@@ -61,7 +61,7 @@ All other files are libraries, using umqtt and pico-rgbkeypad.
     - Copyright © 2021 Martin O'Hanlon
 
 ### Set up File Structure:
-```
+```code
 Raspberry Pi Pico
     ├── main.py
     ├── config.py	
