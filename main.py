@@ -1,3 +1,5 @@
+
+
 """
 main.py
 
@@ -9,11 +11,11 @@ Refer to README.md for setup and usage.
 
 Version Control:
 ---------------
-Version: 1.0.0
-Date: 2024-12-09
+Version: 1.0.1
+Date: 2024-12-14
 Change History:
 - 1.0.0 (2024-12-09): Initial release
-
+- 1.0.1 (2024-12-14): All key colours set
 
 """
 import network
@@ -21,11 +23,16 @@ import time
 from machine import Timer
 from umqtt.simple import MQTTClient
 from rgbkeypad import RGBKeypad
-from config import WIFI_SSID, WIFI_PASSWORD, MQTT_HOST, MQTT_USERNAME, MQTT_PASSWORD, mqtt_publish_topic, mqtt_client_id, mqtt_subscribe_topic
+from config import WIFI_SSID, WIFI_PASSWORD, MQTT_HOST, MQTT_USERNAME, MQTT_PASSWORD, mqtt_publish_topic, mqtt_client_id, mqtt_subscribe_topic, debug_mode, default_keypad_color
 
-# Set white key brightness for idle/default state
-# added to provide contrast and reduce colour bleed from adjacent keys.
-default_keypad_color = (10, 10, 10)
+# Function to toggle debug messages
+def set_debug_mode(mode):
+    global debug_mode
+    debug_mode = mode
+    if debug_mode:
+        print("Debug mode enabled")
+    else:
+        print("Debug mode disabled")
 
 # Create a dictionary to store the last press time for each key
 last_press_times = {}
@@ -47,7 +54,7 @@ keypad.color = default_keypad_color
 def mqtt_callback(topic, msg):
     global last_activity_time
     last_activity_time = time.time()  # Reset activity timer
-    print("Debug: Callback triggered with topic:", topic)
+    if debug_mode: print("Debug: Callback triggered with topic:", topic)
     try:
         payload = msg.decode('utf-8')
         print("Received MQTT message - Topic: {}, Payload: {}".format(topic.decode(), payload))
@@ -60,16 +67,22 @@ def mqtt_callback(topic, msg):
         if status == 1:
             if key.x == 1 and key.y == 0:
                 key.color = (0, 0, 255)  # Blue for x=0, y=1
+                if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Blue'))
             elif key.y == 3:
                 key.color = (255, 75, 0)  # Orange for y=3 row
+                if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Orange'))
+            elif key.x == 2 and key.y == 0:
+                key.color = (120, 0, 160)  # Purple for x=2, y=0
+                if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Purple'))
             elif key.y in [1, 2]:
-                key.color = (0, 225, 0)  # Green for y=1 or y=2 
+                key.color = (0, 225, 0)  # Green for y=1 or y=2
+                if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Green'))
             else:
                 key.color = (255, 0, 0)  # Red for ON
+                if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Red'))
         else:
             key.color = default_keypad_color    # Dim white for OFF
-
-        print("Updated key ({}, {}) to {}".format(key_x, key_y, 'COLOUR' if status == 1 else 'DIM WHITE'))
+            if debug_mode: print("Debug: Updated key ({}, {}) to {}".format(key_x, key_y, 'Dim White'))
     except Exception as e:
         print("Error processing MQTT message: {}".format(e))
 
@@ -110,7 +123,7 @@ def connect_mqtt():
     # Connect to MQTT broker with error handling
     global mqtt_client
     
-    print("Debug: Starting MQTT connection...")
+    if debug_mode: print("Debug: Starting MQTT connection...")
     try:
         mqtt_client = MQTTClient(
             client_id=mqtt_client_id,
@@ -124,7 +137,7 @@ def connect_mqtt():
         
         try:
             mqtt_client.connect()
-            print("Debug: MQTT connection successful")
+            if debug_mode: print("Debug: MQTT connection successful")
         except Exception as e:
             print("Error during MQTT connect:", e)
             raise e
@@ -182,4 +195,6 @@ while True:
         except Exception as reconnect_error:
             print("Reconnection failed:", reconnect_error)
             time.sleep(5)
+
+
 
