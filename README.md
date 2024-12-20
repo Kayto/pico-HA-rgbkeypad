@@ -5,14 +5,6 @@ using **main.py**
 
 Author: AdamT117 (kayto@github.com)
 
-Version Control:
----------------
-Version: 1.0.0
-Date: 2024-12-09
-
-Change History:
-- 1.0.0 (2024-12-09): Initial release
-
 ## What is it?
 
 The code allows the use of a Pimironi RGB keypad as a standalone Home Assistant HA control/notification pad.
@@ -363,3 +355,11 @@ See example automation code below based on the example mapping above.
       payload: '030'
   mode: single
 ```
+Version Control:
+---------------
+Version: 1.0.1
+Date: 2024-12-14
+
+Change History:
+- 1.0.0 (2024-12-09): Initial release
+- 1.0.1 (2024-12-14): All key colours set
