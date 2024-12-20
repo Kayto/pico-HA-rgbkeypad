@@ -1,4 +1,4 @@
-# Standalone MQTT HomeAssistant Keypad Controller
+# Standalone MQTT Home Assistant Keypad Controller
 
 Wifi connected RGB Keypad
 using **main.py**
@@ -9,12 +9,13 @@ Version Control:
 ---------------
 Version: 1.0.0
 Date: 2024-12-09
+
 Change History:
 - 1.0.0 (2024-12-09): Initial release
 
 ## What is it?
 
-The code allows the use of a Pimironi RGB keypad as a standalone HomeAssistant HA control/notification pad.
+The code allows the use of a Pimironi RGB keypad as a standalone Home Assistant HA control/notification pad.
 Using with a Pi Pico W allows 'wireless' control via MQTT, so you just need to power the Pico.
 The pad can provide notification and/or key actions to monitor and control your HA switches and sensors.
 
@@ -74,11 +75,11 @@ Raspberry Pi Pico
 
 Credentials for wifi and mqtt should be placed between the quotes within the config.py.
 
-## EXAMPLE RGB KeyMap and MQTT Reference for HomeAssistant(HA) Setup
+## EXAMPLE RGB KeyMap and MQTT Reference for Home Assistant (HA) Setup
 
 The following assume you have the MQTT Mosquitto broker setup on your Home Assistant.
 
-The following is to assist with HomeAssistant handling.
+The following is to assist with Home Assistant handling.
 Please use the following as an example, to set up your handling within HomeAssistant.
 The hard coding in the main.py relates to.
 - key colours
