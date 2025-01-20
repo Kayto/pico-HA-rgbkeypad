@@ -17,6 +17,8 @@ Yes, you can control HA via the webinterface, mobile app or a fancy touchscreen 
 I just wanted a simple keypad I could plug in anywhere and via wifi give me an immediate heads up on whether I had left the heating or all the lights on.
 OK if thats not enough, then just enjoy the Dr. Evil style level of insight on motion detection and control at the push of a nice RGB button.
 
+![](https://github.com.jpg)
+
 ### Hardware Requirements:
 ---------
 1. Raspberry Pi Pico W:
@@ -363,3 +365,4 @@ Date: 2024-12-14
 Change History:
 - 1.0.0 (2024-12-09): Initial release
 - 1.0.1 (2024-12-14): All key colours set
+- 1.0.2 (2024-12-21): Second button set toggle added on [0,3] : Keypad Light ON/OFF toggle added on [3,3] : Simple user definition added for Key colours in config.py : MQTT Publish modified to allow second button set : MQTT Subscribe modified to allow second button set
