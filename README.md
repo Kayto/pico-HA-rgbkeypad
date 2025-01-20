@@ -363,3 +363,4 @@ Date: 2024-12-14
 Change History:
 - 1.0.0 (2024-12-09): Initial release
 - 1.0.1 (2024-12-14): All key colours set
+- 1.0.2 (2024-12-21): Second button set toggle added on [0,3] : Keypad Light ON/OFF toggle added on [3,3] : Simple user definition added for Key colours in config.py : MQTT Publish modified to allow second button set : MQTT Subscribe modified to allow second button set
