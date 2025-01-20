@@ -67,14 +67,14 @@ Raspberry Pi Pico
 ```
 ### Usage
 Remember all actions are customisable, this is just an example.
-All buttons are a default backlit dim white to allow better colour contrast and to show the pad is active.
+- All buttons are a default backlit dim white to allow better colour contrast and to show the pad is active.
 
-Button x=3, y=3 allows you to turn off the default backlight. Effectively all button lights turn off, handy for stealth and night time use.
-Button x=0, y=3 allows you to toggle to the next buton set. Basically the button sets allow you to have pages of buttons for different actions or to cover more controls. 
+- Button x=3, y=3 allows you to turn off the default backlight. Effectively all button lights turn off, handy for stealth and night time use.
+- Button x=0, y=3 allows you to toggle to the next buton set. Basically the button sets allow you to have pages of buttons for different actions or to cover more controls. 
 
-Rows y=0 are push buttons for on and off - in this case climate - with colour for on.
-Rows y= 1 to 2 are on off push buttons for general switches, lights etc - with colour for on.
-Row y=3 is for notifications, basically the button lights a colour when active - good for motion detectors or for notification of idle, heating etc.
+- Rows y=0 are push buttons for on and off - in this case climate - with colour for on.
+- Rows y= 1 to 2 are on off push buttons for general switches, lights etc - with colour for on.
+- Row y=3 is for notifications, basically the button lights a colour when active - good for motion detectors or for notification of idle, heating etc.
   
 ### Config set up
 
