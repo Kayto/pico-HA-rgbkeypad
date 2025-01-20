@@ -64,7 +64,18 @@ Raspberry Pi Pico
         ├── rgbkeypad.py
         └── umqtt/
             └── simple.py
-```			
+```
+### Usage
+Remember all actions are customisable, this is just an example.
+All buttons are a default backlit dim white to allow better colour contrast and to show the pad is active.
+
+Button x=3, y=3 allows you to turn off the default backlight. Effectively all button lights turn off, handy for stealth and night time use.
+Button x=0, y=3 allows you to toggle to the next buton set. Basically the button sets allow you to have pages of buttons for different actions or to cover more controls. 
+
+Rows y=0 are push buttons for on and off - in this case climate - with colour for on.
+Rows y= 1 to 2 are on off push buttons for general switches, lights etc - with colour for on.
+Row y=3 is for notifications, basically the button lights a colour when active - good for motion detectors or for notification of idle, heating etc.
+  
 ### Config set up
 
 Credentials for wifi and mqtt should be placed between the quotes within the config.py.
@@ -75,10 +86,10 @@ The following assume you have the MQTT Mosquitto broker setup on your Home Assis
 
 The following is to assist with Home Assistant handling.
 Please use the following as an example, to set up your handling within HomeAssistant.
-The hard coding in the main.py relates to.
-- key colours
+The config.py allows you some control over set up as well as easier place for enetering credentials.
+- key colour mapping
 - brightness
-- row y=3 acts as notification only, no publish.
+- additional button sets
 It should be obvious where to look if you want to customise.
 
 ### RGB KeyMap
@@ -90,7 +101,7 @@ It should be obvious where to look if you want to customise.
 | y=2     | BLight1 | BLamp1   | BLamp2  | Light4   |
 | y=3     | Z1Motion| Z2Motion | Z3Motion| Z4Motion |
 
-Colour set up for the keys is handled within the main.py. 
+Colour set up for the keys is handled within the config.py. 
 The example is set up as follows. 
 - climate control on keys 0,0 and 1,0.
 - switches on rows y=1 and y=2
