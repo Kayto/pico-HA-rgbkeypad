@@ -17,7 +17,7 @@ Yes, you can control HA via the webinterface, mobile app or a fancy touchscreen 
 I just wanted a simple keypad I could plug in anywhere and via wifi give me an immediate heads up on whether I had left the heating or all the lights on.
 OK if thats not enough, then just enjoy the Dr. Evil style level of insight on motion detection and control at the push of a nice RGB button.
 
-![](https://github.com.jpg)
+![](https://github.com/Kayto/pico-HA-rgbkeypad/blob/main/docs/20241210_175045.jpg)
 
 ### Hardware Requirements:
 ---------
